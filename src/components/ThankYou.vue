@@ -2,7 +2,7 @@
   <section class="thankyou">
     <img src="../assets/img/illustration-thank-you.svg" alt="thank you">
 
-    <span>You selected 1 out of 5</span>
+    <span>You selected {{ scoreSelected }} out of 5</span>
 
     <div class="text">
       <h2>Thank you!</h2>
@@ -16,6 +16,16 @@
     </div>
   </section>
 </template>
+
+<script>
+  export default {
+    data () {
+      return {
+        scoreSelected: localStorage.getItem('score')
+      }
+    },
+  }
+</script>
 
 <style>
   .thankyou{

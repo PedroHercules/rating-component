@@ -1,7 +1,7 @@
 <template>
   <main>
-    <Rate v-if="currentComponent == 'Rate'"/>
-    <ThankYou v-if="currentComponent == 'ThankYou'"/>
+    <Rate v-if="currentComponent == 'Rate'" @click="changeComponent"/>
+    <ThankYou v-if="currentComponent == 'ThankYou'" score/>
   </main>
 </template>
 
@@ -11,12 +11,17 @@
   export default {
     data () {
       return {
-        currentComponent: 'ThankYou'
+        currentComponent: 'Rate'
       }
     },
     components: {
       Rate,
       ThankYou
+    },
+    methods: {
+      changeComponent(component){
+        this.currentComponent = component;
+      }
     }
   }
 </script>

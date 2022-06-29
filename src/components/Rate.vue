@@ -14,15 +14,15 @@
       <span class="score" @click="chooseScore(4)">5</span>
     </div>
 
-    <button>SUBMIT</button>
+    <button @click="onSubmit">SUBMIT</button>
 </template>
 
 <script>
   export default{
+    props: ['currentComponent'],
     data() {
       return {
         score: 0,
-        indexScoreClicked: -1,
         scoreClicked: 0
       }
     }, 
@@ -38,9 +38,10 @@
         }
         this.scoreClicked = index;
       },
-
+      emits: ['click'],
       onSubmit: function () {
-        
+        this.$emit('click', 'ThankYou')
+        localStorage.setItem('score', this.scoreClicked + 1);
       }
     }
   }
