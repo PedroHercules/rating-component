@@ -1,6 +1,12 @@
 # rating-component
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a project to init learn VueJS, which was developed a layout of component to rating something.
+
+## Was developed in these techs
+- VueJS 3
+- Javascript
+- HTML (template Vue)
+- CSS
 
 ## Recommended IDE Setup
 
