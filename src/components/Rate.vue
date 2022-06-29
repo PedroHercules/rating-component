@@ -1,5 +1,4 @@
 <template>
-  <main>
     <section class="text">
       <img src="../assets/img/icon-star.svg" alt="star">
       <h2>How did we do?</h2>
@@ -16,7 +15,6 @@
     </div>
 
     <button>SUBMIT</button>
-  </main>
 </template>
 
 <script>
@@ -24,6 +22,7 @@
     data() {
       return {
         score: 0,
+        indexScoreClicked: -1,
         scoreClicked: 0
       }
     }, 
@@ -32,12 +31,15 @@
         const score = document.getElementsByClassName('score')[index];
         score.style.backgroundColor = "hsl(216, 12%, 54%)";
         score.style.color = "#fff";
-        if (index != this.scoreClicked){
+        if (this.scoreClicked >= 0 && this.scoreClicked != index){
           const beforeScoreClicked = document.getElementsByClassName('score')[this.scoreClicked];
           beforeScoreClicked.style.backgroundColor = "";
           beforeScoreClicked.style.color = "";
-          this.scoreClicked = index;
         }
+        this.scoreClicked = index;
+      },
+
+      onSubmit: function () {
         
       }
     }
@@ -45,20 +47,6 @@
 </script>
 
 <style>
-  main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    margin: 0 auto;
-    width: 47%;
-    height: 400px;
-    padding: 0 30px;
-    border-radius: 2rem;
-    background: hsl(213, 19%, 18%);
-  }
- 
   h2{
     color: #fff;
   }
@@ -120,22 +108,5 @@
     color: hsl(25, 97%, 53%);
   }
 
-  @media only screen and (min-width: 501px) and (max-width: 600px) {
-    body{
-      padding: 20px;
-    }
-    main{
-      width: 80%;
-    }
-  }
   
-
-  @media only screen and (max-width: 500px) {
-    body{
-      padding: 20px;
-    }
-    main{
-      width: 100%;
-    }
-  }
 </style>
