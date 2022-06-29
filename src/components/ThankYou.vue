@@ -27,7 +27,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .thankyou{
     display: flex;
     flex-direction: column;
