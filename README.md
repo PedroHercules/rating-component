@@ -2,6 +2,9 @@
 
 This is a project to init learn VueJS, which was developed a layout of component to rating something.
 
+## Demo
+![rating gif](rating.gif)
+
 ## Was developed in these techs
 - VueJS 3
 - Javascript
