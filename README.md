@@ -1,4 +1,4 @@
-# rating-component
+# Rating Component
 
 This is a project to init learn VueJS, which was developed a layout of component to rating something.
 
